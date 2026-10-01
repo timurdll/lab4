@@ -1,0 +1,12 @@
+replicaCount: 2
+
+image:
+  tag: "1.0.0-rc.1"
+
+config:
+  logLevel: info
+  catalogBackendUrl: https://catalog-staging.example.internal
+
+ingress:
+  enabled: true
+  host: catalog-staging.example.com

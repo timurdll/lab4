@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "catalog-api.fullname" . }}
+  labels:
+    {{- include "catalog-api.labels" . | nindent 4 }}
+data:
+  LOG_LEVEL: {{ .Values.config.logLevel | quote }}
+  CATALOG_BACKEND_URL: {{ .Values.config.catalogBackendUrl | quote }}

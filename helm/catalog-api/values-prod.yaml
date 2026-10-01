@@ -1,0 +1,24 @@
+replicaCount: 3
+
+image:
+  tag: "1.0.0"
+
+config:
+  logLevel: warn
+  catalogBackendUrl: https://catalog.example.internal
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 256Mi
+  limits:
+    cpu: 1
+    memory: 512Mi
+
+autoscaling:
+  minReplicas: 3
+  maxReplicas: 10
+
+ingress:
+  enabled: true
+  host: catalog.example.com
